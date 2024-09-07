@@ -1,5 +1,4 @@
 
-
 import java.util.List;
 
 public class Commissioned extends Employee {
@@ -18,9 +17,9 @@ public class Commissioned extends Employee {
 	@Override
 	public Double calcGrossPay(Integer month, Integer year) {
 		Double totalSoldOrdersValue = 0.0;
-		Integer prevMonth = month == 1 ? 12 : month - 1;
 		for (Order o : soldOrders) {
-			if (o.getOrderDate().getMonthValue() == prevMonth && o.getOrderDate().getYear() == year) {
+			if (o.getOrderDate().plusMonths(1).getMonthValue() == month
+					&& o.getOrderDate().plusMonths(1).getYear() == year) {
 				totalSoldOrdersValue += o.getOrderAmount();
 			}
 		}
