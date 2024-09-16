@@ -1,0 +1,6 @@
+Error come from removeDuplicates method. The Hashmap is using to check the existing of Employee.
+HashMap.containsKey(e) will compare element1.hashcode and element2.hashcode
+The hashCode() method is not overridden in Employee class, so it's use default hashCode method of Object.
+
+If we do not override this method then default hashCode() method calculates different hash codes for different objects with same value as well.
+If we override the hashCode() method in Employee class to return `Objects.hash(name, salary)`, it will work.

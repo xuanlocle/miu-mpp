@@ -1,0 +1,6 @@
+The error is come from `visible` property in Employee class.
+The Employee class was override method equals() and hashCode() with name, salary and visited.
+But during runtime, the `setVisited` method be invoked in `removeDuplicates` method, and the `visited` property has been changed to true. It's affect to the remaining Employee objects.
+When we use HashMap.containsKey(), it calls method equals and hashCode which also compare visited property, -> not equal.
+
+So, if the visited property can change during runtime, we can just use `name` and `salary` inside equals and hashCode overriding methods.

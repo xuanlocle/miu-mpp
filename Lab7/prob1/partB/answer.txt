@@ -1,0 +1,6 @@
+The error comes from the listsAreEqual method and the Employee.equals method.
+The List.contains(e) method calls the equals method from the Object superclass of Employee.
+Although the Employee class has an equals(Employee) method, it's not an override of the equals(Object) method (due to differing parameter types).
+
+If we do not override the equals(Object) method, the equals method will only check the difference in references for both objects in the heap.
+If we override the equals(Object) method correctly, it will work.

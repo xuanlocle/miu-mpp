@@ -24,7 +24,14 @@ public class Employee {
 	public String toString() {
 		return "(" + name + ", " + salary + ")";
 	}
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Employee emp))
+			return false;
+        return equals(emp);
+	}
+
 	public boolean equals(Employee e) {
 		return e.name.equals(name) && e.salary == salary;
 	}
