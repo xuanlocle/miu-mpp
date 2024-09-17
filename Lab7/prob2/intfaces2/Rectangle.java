@@ -1,18 +1,20 @@
 package lesson5.lecture.intfaces2;
 
-public class Rectangle implements ClosedCurve {
+import java.util.List;
+
+public class Rectangle implements Polygon {
 	private double length, width;
 	public Rectangle(double length, double width) {
 		this.length = length;
 		this.width = width;
 	}
-	
+
 	@Override
-	public double computePerimeter() {
-		return 2 * length + 2 * width;
+	public List<Double> getLengths() {
+		return List.of(length, width, length, width);
 	}
-	
-	
+
+
 	public double getLength() {
 		return length;
 	}
