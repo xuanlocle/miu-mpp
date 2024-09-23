@@ -1,4 +1,4 @@
-package prob9;
+package src.prob9;
 import java.util.*;
 
 public class Dish {
